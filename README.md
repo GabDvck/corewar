@@ -9,7 +9,7 @@ Welcome to our implementation of the famous **CoreWar** programming game, develo
 
 This project includes not only a complete virtual machine (MARS) to interpret the RedCode assembly language but also **two artificial intelligences (Genetic Algorithm and Simulated Annealing)** capable of writing and optimizing their own programs to win.
 
-*(Insert a short GIF or image of your GUI during combat here)*
+![Aperçu d'un combat CoreWar](interface.png)
 
 ## 🧠 Main Features
 
@@ -20,7 +20,7 @@ This project includes not only a complete virtual machine (MARS) to interpret th
 
 ## 📄 Engineering & Architecture Report
 
-To deeply understand our architectural choices (UML diagrams), the mathematics behind our AIs, and the detailed analysis of our experimental results, **[check out our comprehensive project report (PDF, in French)](link_to_your_pdf_in_the_repo.pdf)**.
+To deeply understand our architectural choices (UML diagrams), the mathematics behind our AIs, and the detailed analysis of our experimental results, **[check out our comprehensive project report (PDF, in French)](rapprt/rapport_CoreWar.pdf)**.
 
 ## 🚀 How to Run the Project
 
@@ -46,4 +46,3 @@ This project uses **Apache Ant** for easy compilation and execution.
 - Gabriel Devick
 - Galéo Prioux
 - Nathan Giraud
-# corewar
