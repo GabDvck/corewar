@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="CoreWar" default="compile" basedir=".">
+
+	<property name="projet.sources.dir" value="src"/>
+	<property name="projet.test.dir" value="test"/> <property name="projet.build.dir" value="build"/>
+	<property name="projet.lib.dir" value="lib"/>
+
+	<path id="projet.classpath">
+		<fileset dir="${projet.lib.dir}">
+			<include name="*.jar"/>
+		</fileset>
+		<pathelement location="${projet.build.dir}" />
+	</path>
+
+	<target name="compile" description="Compilation des classes du jeu">
+		<mkdir dir="${projet.build.dir}"/>
+		<javac srcdir="${projet.sources.dir}" destdir="${projet.build.dir}" debug="on" optimize="off" deprecation="on" includeantruntime="false">
+			<classpath refid="projet.classpath"/>
+		</javac>
+	</target>
+
+	<target name="compile-tests" description="Compilation des tests JUnit" depends="compile">
+		<mkdir dir="${projet.test.dir}"/> 
+		<javac srcdir="${projet.test.dir}" destdir="${projet.build.dir}" debug="on" includeantruntime="false">
+			<classpath refid="projet.classpath"/>
+		</javac>
+	</target>
+
+	<target name="run" description="Execution du jeu" depends="compile">
+		<java classname="corewar.mars.Demo" fork="true">
+			<classpath refid="projet.classpath"/>
+		</java>
+	</target>
+
+	<target name="test" description="Execution des tests JUnit" depends="compile-tests">
+		<junitlauncher printSummary="true" haltonfailure="no">
+			<classpath refid="projet.classpath"/>
+			<testclasses>
+				<fileset dir="${projet.build.dir}">
+					<include name="**/*Test.class" />
+				</fileset>
+				
+				<fork dir="${basedir}"/>
+			</testclasses>
+		</junitlauncher>
+	</target>
+
+	<target name="javadoc" description="Generation de la javadoc">
+		<mkdir dir="doc"/>
+		<javadoc sourcepath="${projet.sources.dir}" destdir="doc" encoding="UTF-8" charset="UTF-8" docencoding="UTF-8">
+			<fileset dir="${projet.sources.dir}" defaultexcludes="yes">
+				<include name="**/*.java" />
+			</fileset>
+		</javadoc>
+	</target>
+
+</project>

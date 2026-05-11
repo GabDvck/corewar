@@ -1,0 +1,7 @@
+corewar.generation.genetic
+corewar.generation.simulatedannealing
+corewar.mars
+corewar.mars.gui
+corewar.redcode
+corewar.redcode.exceptions
+corewar.util

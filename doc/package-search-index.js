@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"corewar.generation.genetic"},{"l":"corewar.generation.simulatedannealing"},{"l":"corewar.mars"},{"l":"corewar.mars.gui"},{"l":"corewar.redcode"},{"l":"corewar.redcode.exceptions"},{"l":"corewar.util"}];updateSearchResults();
